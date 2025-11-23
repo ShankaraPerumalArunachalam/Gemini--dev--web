@@ -206,7 +206,7 @@ const App: React.FC = () => {
             
             <div className="mb-8 max-w-5xl">
                 <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1]">
-                    <StaggeredTitle text="Ship" delay={0.1} /> <StaggeredTitle text="Scalable" className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400" delay={0.2} /> <StaggeredTitle text="Software" delay={0.4} /> <StaggeredTitle text="At" delay={0.5} /> <StaggeredTitle text="Warp" delay={0.6} /> <br className="hidden md:block"/> <StaggeredTitle text="Speed" className="italic font-light text-accent" delay={0.7} />
+                    <StaggeredTitle text="Idea Manifest: Leading AI Solutions at ideamanifest.com" delay={0.1} />
                 </h1>
             </div>
 
@@ -228,6 +228,27 @@ const App: React.FC = () => {
                 </div>
             </RevealText>
         </div>
+      </section>
+
+      {/* SEO CONTENT SECTION */}
+      <section className="py-20 px-6 md:px-12 bg-surface border-b border-white/5">
+          <div className="max-w-4xl mx-auto text-center">
+              <h2 className="font-serif text-3xl md:text-4xl text-primary mb-8">What is Idea Manifest?</h2>
+              <div className="text-secondary text-lg leading-relaxed space-y-6 text-left">
+                  <p>
+                      <strong>Idea Manifest</strong> is a premier <strong>AI consulting</strong> and software development firm dedicated to transforming visionary concepts into high-performance digital reality. At <strong>ideamanifest.com</strong>, we specialize in bridging the gap between complex artificial intelligence technologies and practical business applications. Our mission is to empower organizations—from agile startups to global enterprises—with the tools they need to dominate in an AI-first world.
+                  </p>
+                  <p>
+                      Our core <strong>ideamanifest services</strong> encompass a comprehensive suite of digital solutions. We don't just build software; we engineer intelligent ecosystems. Whether you need advanced <strong>Generative AI integration</strong>, custom Large Language Model (LLM) development, or robust full-stack web architectures, our team delivers excellence. We leverage cutting-edge frameworks like Next.js, Python, and React Native to ensure your applications are not only scalable but also future-proof.
+                  </p>
+                  <p>
+                      As a leader in <strong>ideamanifest AI consulting</strong>, we understand that every business has unique challenges. That's why we offer tailored strategies that align with your specific goals. From automating operational workflows to creating immersive customer experiences, our solutions are designed to drive tangible growth. We believe in a collaborative partnership where your domain expertise meets our technical prowess to create products that truly resonate with your audience.
+                  </p>
+                  <p>
+                      Choose <strong>Idea Manifest</strong> for a development partner that values speed without compromising on quality. Our "Warp Speed" delivery model utilizes AI-accelerated coding pipelines to significantly reduce time-to-market, giving you a competitive edge. Explore our <a href="#services" className="text-accent hover:underline">services</a> or learn more <a href="#home" className="text-accent hover:underline">about us</a> to see how we can elevate your business. Visit <strong>ideamanifest.com</strong> today to start your journey towards digital innovation.
+                  </p>
+              </div>
+          </div>
       </section>
 
       {/* INTRO SECTION */}
