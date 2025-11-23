@@ -3,9 +3,9 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
-  { label: 'HOME', href: '#home' },
-  { label: 'SERVICES', href: '#services' },
-  { label: 'TECHNOLOGY', href: '#technology' },
+  { label: 'Home', href: '#home' },
+  { label: 'Services', href: '#services' },
+  { label: 'Technology', href: '#technology' },
   { label: 'FAQ', href: '#faq' },
 ];
 
@@ -27,36 +27,51 @@ export const Navbar: React.FC = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-300 ${
-          scrolled ? 'bg-background/90 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex justify-between items-center transition-all duration-500 ${
+          scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100 py-4' : 'bg-transparent py-6'
         }`}
       >
-        <a href="#" className="font-display font-bold text-xl md:text-2xl tracking-tight mix-blend-difference z-50 relative flex items-center gap-2">
-          Diseño Pinnacle
-        </a>
+        <div className="flex items-center gap-3">
+           {/* Professional Logo */}
+           <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${scrolled ? 'bg-primary text-white' : 'bg-white text-primary'}`}>
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+               <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+               <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+             </svg>
+           </div>
+           <a href="#" className={`font-sans font-bold text-xl tracking-tight transition-colors ${scrolled ? 'text-primary' : 'text-white'}`}>
+             Idea Manifest
+           </a>
+        </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden md:flex gap-10 items-center">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-xs md:text-sm uppercase tracking-widest hover:text-brand-red transition-colors relative group font-medium"
+              className={`text-sm font-medium transition-colors relative group ${scrolled ? 'text-primary hover:text-accent' : 'text-white/90 hover:text-white'}`}
             >
               {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-current transition-all group-hover:w-full"></span>
             </a>
           ))}
           <a
             href="#contact"
-            className="px-6 py-2 border border-white/20 rounded-full text-xs md:text-sm uppercase tracking-widest hover:border-brand-red hover:text-brand-red transition-all duration-300 relative overflow-hidden group"
+            className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                scrolled 
+                ? 'bg-primary text-white hover:bg-accent' 
+                : 'bg-white text-primary hover:bg-gray-100'
+            }`}
           >
-             <span className="relative z-10">CONTACT US</span>
+             Contact Us
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden z-50 relative text-white"
+          className={`md:hidden z-50 relative ${scrolled ? 'text-primary' : 'text-white'}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,7 +85,7 @@ export const Navbar: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black z-40 flex items-center justify-center"
+            className="fixed inset-0 bg-primary z-40 flex items-center justify-center"
           >
             <div className="flex flex-col items-center gap-8">
               {navItems.map((item, index) => (
@@ -80,7 +95,7 @@ export const Navbar: React.FC = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="font-display text-4xl md:text-6xl font-bold uppercase tracking-tighter hover:text-brand-red transition-all"
+                  className="font-serif italic text-4xl md:text-5xl text-white hover:text-accent transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -91,7 +106,7 @@ export const Navbar: React.FC = () => {
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
-                  className="mt-4 px-8 py-3 border border-white/20 rounded-full text-xl uppercase tracking-widest hover:bg-brand-red hover:border-brand-red transition-all"
+                  className="mt-4 px-8 py-3 bg-white text-primary rounded-full text-lg font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact Us

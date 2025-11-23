@@ -37,20 +37,24 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <motion.div
-      className="custom-cursor fixed top-0 left-0 w-8 h-8 border border-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
+      className="custom-cursor fixed top-0 left-0 w-8 h-8 border border-primary rounded-full pointer-events-none z-[9999]"
       style={{
         translateX: cursorXSpring,
         translateY: cursorYSpring,
       }}
       animate={{
-        scale: hovered ? 2.5 : 1,
-        backgroundColor: hovered ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0)',
+        scale: hovered ? 1.5 : 1,
+        borderColor: hovered ? 'rgba(67, 56, 202, 0)' : 'rgba(15, 23, 42, 0.4)',
+        backgroundColor: hovered ? 'rgba(67, 56, 202, 0.1)' : 'rgba(255, 255, 255, 0)',
       }}
       transition={{ duration: 0.2 }}
     >
         <motion.div 
-            className="w-1 h-1 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            animate={{ opacity: hovered ? 0 : 1 }}
+            className="w-1.5 h-1.5 bg-primary rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            animate={{ 
+                scale: hovered ? 0.5 : 1,
+                backgroundColor: hovered ? '#4338ca' : '#0F172A'
+            }}
         />
     </motion.div>
   );
